@@ -10,7 +10,7 @@ const navigator = createStackNavigator({
 {
   initialRouteName: 'Home',
   defaultNavigationOptions: {
-    title: 'Northeastern News'
+    title: 'NEU Bay Area'
   }
 });
 
