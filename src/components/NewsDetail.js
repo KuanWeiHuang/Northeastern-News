@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         margin: 5,
-        fontFamily: 'Arial'
+        fontFamily: 'Arial Hebrew'
     },
     imageStyle: {
         height: 170,
