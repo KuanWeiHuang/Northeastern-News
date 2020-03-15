@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import SearchBar from '../components/SearchBar';
 import NewsDetail from '../components/NewsDetail';
 import Banner from '../components/Banner';
 import { withNavigation } from 'react-navigation';
+import { Feather } from '@expo/vector-icons';
 
 const HomeScreen = ({ navigation }) => {
     const [term, setTerm] = useState('');
@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
             <Banner />
 
             <Text>{term}</Text>
-            <ScrollView>
+            <ScrollView >
                 <TouchableOpacity onPress={() => navigation.navigate('News')}>
                     <NewsDetail 
                         title = "News 1" 
@@ -36,6 +36,18 @@ const HomeScreen = ({ navigation }) => {
             </ScrollView>
         </View>
     );
+};
+
+HomeScreen.navigationOptions = ({ navigation }) => {
+    return {
+        headerRight: () => {
+            return(
+                <TouchableOpacity onPress={() => navigation.navigate('')}>
+                    <Feather name="menu" size={30} style={ {marginRight: 10} }/>
+                </TouchableOpacity>
+            );
+        }
+    };
 };
 
 const styles = StyleSheet.create({});
