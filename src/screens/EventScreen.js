@@ -13,6 +13,7 @@ const EventScreen = () => {
           title="Technical Interview Workshp with Michelle Lu"
           time="4:30-5:00 pm"
           describe="aaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsaf"
+          linkScreen="EventDetail"
         />
         <EventBlock
           day="Feb 29"
@@ -20,6 +21,7 @@ const EventScreen = () => {
           title="bbb"
           time="4:30-5:00 pm"
           describe="aaaadsfsadfsdfasdfsdfasfsadfsaf"
+          linkScreen="EventDetail"
         />
         <EventBlock
           day="Feb 28"
@@ -27,6 +29,7 @@ const EventScreen = () => {
           title="ccc"
           time="4:30-5:00 pm"
           describe="aaaadsfsadfsdfasdfsdfasfsadfsaf"
+          linkScreen="EventDetail"
         />
         <EventBlock
           day="Feb 28"
@@ -34,6 +37,7 @@ const EventScreen = () => {
           title="ccc"
           time="4:30-5:00 pm"
           describe="aaaadsfsadfsdfasdfsdfasfsadfsaf"
+          linkScreen="EventDetail"
         />
       </View>
     </ScrollView>
