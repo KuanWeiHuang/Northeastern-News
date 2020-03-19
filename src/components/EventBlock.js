@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   block: {
     height: 228,
     width: 280,
-
+    marginBottom: 10,
     borderRadius: 10,
     shadowColor: "#000000",
     shadowOpacity: 0.25,

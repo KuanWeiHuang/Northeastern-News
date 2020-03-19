@@ -1,12 +1,12 @@
 import React from "react";
 import { Text, View, ScrollView, StyleSheet } from "react-native";
 import EventBlock from "../components/EventBlock";
-import Banner2 from "../components/Banner2";
+import Banner from "../components/Banner";
 
 const EventScreen = () => {
   return (
     <View>
-      <Banner2 />
+      <Banner />
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.line}></View>
         <View>
@@ -16,7 +16,7 @@ const EventScreen = () => {
             title="Technical Interview Workshp with Michelle Lu"
             time="4:30-5:00 pm"
             describe="aaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsaf"
-            linkScreen="EventDetailDemo"
+            linkScreen="EventDetail"
           />
           <EventBlock
             day="Feb 29"
