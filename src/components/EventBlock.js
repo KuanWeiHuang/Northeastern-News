@@ -1,24 +1,18 @@
 import React, { useReducer } from "react";
-import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { withNavigation } from "react-navigation";
 import { Feather, Entypo, MaterialIcons } from "@expo/vector-icons";
 const reducer = (state, action) => {
-  //action={type:'like' || 'mark'}
+  //action={type:'like' || 'mark' || 'imageS'}
   switch (action.type) {
     case "like":
-      if (state.like) {
-        return { ...state, like: (state.like = false) };
-      } else {
-        return { ...state, like: (state.like = true) };
-      }
+      return { ...state, like: (state.like = state.like ? false : true) };
 
     case "mark":
-      if (state.mark) {
-        return { ...state, mark: (state.mark = false) };
-      } else {
-        return { ...state, mark: (state.mark = true) };
-      }
+      return { ...state, mark: (state.mark = state.mark ? false : true) };
+    case "imageS":
+      return { ...state, imageS: (state.imageS = true) };
     default:
       return state;
   }
@@ -35,76 +29,80 @@ const EventBlock = ({
 }) => {
   const [state, dispatch] = useReducer(reducer, {
     like: false,
-    mark: false
+    mark: false,
+    imageS: false
   });
 
   return (
-    <SafeAreaView style={{ height: 250 }}>
-      <View style={styles.container}>
-        <View>
-          <Text style={styles.day}>{day}</Text>
-          <Text style={styles.day}>{year}</Text>
-        </View>
+    <View style={styles.container}>
+      <View>
+        <Text style={styles.day}>{day}</Text>
+        <Text style={styles.day}>{year}</Text>
+      </View>
 
-        <View style={{ alignItems: "center" }}>
-          <View style={styles.dot} />
-          <View style={styles.line} />
-        </View>
+      <View style={styles.dot} />
 
-        <View style={styles.block}>
-          {/* text and image block */}
+      <View style={styles.block}>
+        {/* text and image block */}
+        <View style={styles.touchView}>
           <TouchableOpacity
+            style={styles.Text}
             onPress={() => navigation.navigate(`${linkScreen}`)}
           >
-            <View style={styles.detailText}>
+            <View>
               <Text style={styles.detailTitle}>{title}</Text>
               <Text style={styles.detailTime}>{time}</Text>
               <Text>{describe}</Text>
             </View>
           </TouchableOpacity>
 
-          {/* icons */}
-          <View style={styles.iconBlock}>
-            <View style={styles.tag}>
-              <Feather name="tag" size={25} style={styles.icon} />
-              <Text> Events</Text>
-            </View>
-            {/* right three icon  */}
-            <View style={styles.threeIcons}>
-              <TouchableOpacity onPress={() => dispatch({ type: "like" })}>
-                <View style={{ width: 25, height: 25 }}>
-                  {state.like ? (
-                    <Entypo name="heart" size={25} color="#E22C2C" />
-                  ) : (
-                    <Entypo
-                      name="heart-outlined"
-                      size={25}
-                      style={styles.icon}
-                    />
-                  )}
-                </View>
-              </TouchableOpacity>
+          {/* <TouchableOpacity
+            style={styles.imageStyle}
+            onPress={() => navigation.navigate(`${linkScreen}`)}
+          >
+            <View
+              style={{ width: 100, height: 100, backgroundColor: "red" }}
+            ></View>
+          </TouchableOpacity> */}
+        </View>
 
-              <TouchableOpacity onPress={() => dispatch({ type: "mark" })}>
-                <View style={{ width: 25, height: 25 }}>
-                  {state.mark ? (
-                    <MaterialIcons name="bookmark" size={25} color="#FCA42D" />
-                  ) : (
-                    <MaterialIcons
-                      name="bookmark-border"
-                      size={25}
-                      style={styles.icon}
-                    />
-                  )}
-                </View>
-              </TouchableOpacity>
+        {/* icons */}
+        <View style={styles.iconBlock}>
+          <View style={styles.tag}>
+            <Feather name="tag" size={25} style={styles.icon} />
+            <Text> Events</Text>
+          </View>
+          {/* right three icon  */}
+          <View style={styles.threeIcons}>
+            <TouchableOpacity onPress={() => dispatch({ type: "like" })}>
+              <View style={{ width: 25, height: 25 }}>
+                {state.like ? (
+                  <Entypo name="heart" size={25} color="#E22C2C" />
+                ) : (
+                  <Entypo name="heart-outlined" size={25} style={styles.icon} />
+                )}
+              </View>
+            </TouchableOpacity>
 
-              <Feather name="share" size={22} style={styles.icon} />
-            </View>
+            <TouchableOpacity onPress={() => dispatch({ type: "mark" })}>
+              <View style={{ width: 25, height: 25 }}>
+                {state.mark ? (
+                  <MaterialIcons name="bookmark" size={25} color="#FCA42D" />
+                ) : (
+                  <MaterialIcons
+                    name="bookmark-border"
+                    size={25}
+                    style={styles.icon}
+                  />
+                )}
+              </View>
+            </TouchableOpacity>
+
+            <Feather name="share" size={22} style={styles.icon} />
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -113,11 +111,13 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    alignItems: "flex-start"
+    alignItems: "flex-start",
+    marginBottom: 10
   },
   block: {
     height: 228,
     width: 280,
+
     borderRadius: 10,
     shadowColor: "#000000",
     shadowOpacity: 0.25,
@@ -137,20 +137,36 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
-    backgroundColor: "grey",
-    marginTop: 10,
-    color: "#373737"
+    backgroundColor: "#373737",
+    marginTop: 10
   },
   line: {
-    height: 250,
+    height: 230,
     width: 1.5,
-    backgroundColor: "#373737",
-    opacity: 0.5
+    backgroundColor: "#9b9b9b",
+    alignItems: "center",
+    justifyContent: "flex-start",
+    top: 10
   },
-  detailText: {
-    padding: 15,
-    height: 180
-    // justifyContent: "space-between",
+  touchView: {
+    width: 280,
+    height: 185,
+    flexDirection: "row"
+    // borderColor: "red",
+    // borderWidth: 1
+  },
+  Text: {
+    paddingVertical: 15,
+    paddingLeft: 15,
+    paddingRight: 5,
+    // height: 180,
+    flex: 5
+    // borderColor: "blue",
+    // borderWidth: 1
+  },
+  imageStyle: {
+    flex: 2,
+    borderWidth: 1
   },
   detailTitle: {
     fontFamily: "ArialHebrew-Bold",
@@ -173,16 +189,12 @@ const styles = StyleSheet.create({
   iconBlock: {
     flexDirection: "row",
     width: 280
-    // borderColor: "blue",
-    // borderWidth: 1
   },
   tag: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center"
-    // borderColor: "red",
-    // borderWidth: 1
   },
   threeIcons: {
     flex: 1,
@@ -190,8 +202,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     marginHorizontal: 20,
     justifyContent: "space-evenly"
-    // borderColor: "green",
-    // borderWidth: 1
   },
   icon: {
     opacity: 0.8
