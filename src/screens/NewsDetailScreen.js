@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image} from 'react-native';
 
-const NewsDetail = ({ imageSource, title }) => {
+const NewsDetailScreen = ({ imageSource, title }) => {
     return <View style={styles.container}>
         <Image style={styles.imageStyle} source = {imageSource} />
         <Text style={styles.titleStyle}>{title}</Text>
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         elevation: 5,
         backgroundColor: 'white',
         marginBottom: 15
-    
+
     },
     titleStyle: {
         fontSize: 20,
@@ -42,4 +42,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default NewsDetail;
+export default NewsDetailScreen;
