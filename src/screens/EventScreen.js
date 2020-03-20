@@ -6,7 +6,6 @@ import Banner from "../components/Banner";
 const EventScreen = () => {
   return (
     <View>
-      <Banner />
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.line}></View>
         <View>
@@ -17,14 +16,25 @@ const EventScreen = () => {
             time="4:30-5:00 pm"
             describe="aaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsaf"
             linkScreen="EventDetail"
+            imageSource="../../assets/event1image.png"
           />
           <EventBlock
             day="Feb 29"
             year="2020"
-            title="bbb"
+            title="Case Study Workshop"
             time="4:30-5:00 pm"
-            describe="aaaadsfsadfsdfasdfsdfasfsadfsaf"
+            describe="aaaadsfsadfsdfasdfsdfasfsadfsafsafsafafasdfasfasfasfffaf"
             linkScreen="EventDetail"
+            imageSource=""
+          />
+          <EventBlock
+            day="Feb 28"
+            year="2020"
+            title="ccc"
+            time="4:30-5:00 pm"
+            describe="aaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsaf"
+            linkScreen="EventDetail"
+            imageSource=""
           />
           <EventBlock
             day="Feb 28"
@@ -33,14 +43,7 @@ const EventScreen = () => {
             time="4:30-5:00 pm"
             describe="aaaadsfsadfsdfasdfsdfasfsadfsaf"
             linkScreen="EventDetail"
-          />
-          <EventBlock
-            day="Feb 28"
-            year="2020"
-            title="ccc"
-            time="4:30-5:00 pm"
-            describe="aaaadsfsadfsdfasdfsdfasfsadfsaf"
-            linkScreen="EventDetail"
+            imageSource=""
           />
         </View>
       </ScrollView>

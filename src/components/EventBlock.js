@@ -11,8 +11,6 @@ const reducer = (state, action) => {
 
     case "mark":
       return { ...state, mark: (state.mark = state.mark ? false : true) };
-    case "imageS":
-      return { ...state, imageS: (state.imageS = true) };
     default:
       return state;
   }
@@ -25,12 +23,12 @@ const EventBlock = ({
   time,
   describe,
   linkScreen,
+  imageSource,
   navigation
 }) => {
   const [state, dispatch] = useReducer(reducer, {
     like: false,
-    mark: false,
-    imageS: false
+    mark: false
   });
 
   return (
@@ -44,6 +42,7 @@ const EventBlock = ({
 
       <View style={styles.block}>
         {/* text and image block */}
+        {/* text */}
         <View style={styles.touchView}>
           <TouchableOpacity
             style={styles.Text}
@@ -52,18 +51,28 @@ const EventBlock = ({
             <View>
               <Text style={styles.detailTitle}>{title}</Text>
               <Text style={styles.detailTime}>{time}</Text>
+            </View>
+            <View style={{ height: 60 }}>
               <Text>{describe}</Text>
             </View>
           </TouchableOpacity>
 
-          {/* <TouchableOpacity
-            style={styles.imageStyle}
-            onPress={() => navigation.navigate(`${linkScreen}`)}
-          >
-            <View
-              style={{ width: 100, height: 100, backgroundColor: "red" }}
-            ></View>
-          </TouchableOpacity> */}
+          {/* image  */}
+          {imageSource !== "" ? (
+            <TouchableOpacity
+              style={styles.imageView}
+              onPress={() => navigation.navigate(`${linkScreen}`)}
+            >
+              <Image
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  flex: 1
+                }}
+                source={require("../../assets/event1image.png")}
+              />
+            </TouchableOpacity>
+          ) : null}
         </View>
 
         {/* icons */}
@@ -112,7 +121,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "flex-start",
-    marginBottom: 10
+    marginTop: 20
   },
   block: {
     height: 228,
@@ -152,21 +161,19 @@ const styles = StyleSheet.create({
     width: 280,
     height: 185,
     flexDirection: "row"
-    // borderColor: "red",
-    // borderWidth: 1
   },
   Text: {
     paddingVertical: 15,
     paddingLeft: 15,
-    paddingRight: 5,
-    // height: 180,
+    paddingRight: 15,
+    height: 120,
     flex: 5
-    // borderColor: "blue",
-    // borderWidth: 1
   },
-  imageStyle: {
+  imageView: {
     flex: 2,
-    borderWidth: 1
+    height: 120,
+    marginTop: 20,
+    marginRight: 15
   },
   detailTitle: {
     fontFamily: "ArialHebrew-Bold",

@@ -1,9 +1,17 @@
 import React, { useState, useReducer } from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Button,
+  Image,
+  Dimensions
+} from "react-native";
 import { Entypo, MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const EventDetailDemo = () => {
+  const win = Dimensions.get("window");
   return (
     <>
       <Text>Event Detail screen</Text>
