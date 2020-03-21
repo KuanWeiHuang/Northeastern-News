@@ -4,7 +4,8 @@ import { createAppContainer } from 'react-navigation';
 import HomeScreen from './src/screens/HomeScreen';
 import NewsScreen from './src/screens/NewsScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen'
-import { Provider } from './src/context/Favorites'
+import { Provider } from './src/context/Favorites';
+import firebase from 'firebase';
 
 const navigator = createStackNavigator(
   {
