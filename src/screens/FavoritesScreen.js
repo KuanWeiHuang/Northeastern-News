@@ -1,22 +1,16 @@
-import React, {useContext} from 'react';
-import {Text, View, StyleSheet, FlatList} from 'react-native';
-import { Context } from '../context/Favorites';
+import React from 'react';
+import { Text, View, ScrollView, StyleSheet, TouchableOpacity} from 'react-native';
 
-const FavoritesScreen = () => {
-    const { state, addFavorites, deleteFavorites } = useContext(Context);
-    return(
+const AccountScreen = ({navigation}) => {
+    return (
         <View>
-            <FlatList 
-                data = {state}
-                keyExtractor = {(News) => News.id}
-                renderItem = {({ item }) => {
-                    return <Text>{item.id}</Text>;
-                }}
-            />
+            <TouchableOpacity onPress={()=>navigation.navigate('Signin')}>
+             <Text> Favorite Screen</Text>
+            </TouchableOpacity>
         </View>
     );
-}
+};
 
-const styles = StyleSheet.create({});
+const style = StyleSheet.create({});
 
-export default FavoritesScreen;
+export default AccountScreen;

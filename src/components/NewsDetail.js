@@ -2,10 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, Image} from 'react-native';
 
 const NewsDetail = ({ imageSource, title }) => {
-    return <View style={styles.container}>
+    return (
+      <View style={styles.container}>
         <Image style={styles.imageStyle} source = {imageSource} />
         <Text style={styles.titleStyle}>{title}</Text>
-    </View>
+      </View>
+    );
 };
 
 const styles = StyleSheet.create({
