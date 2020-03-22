@@ -1,15 +1,35 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image} from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
+import { Ionicons, Feather } from '@expo/vector-icons';
 
 const NewsDetail = ({ imageSource, title }) => {
-    return <View style={styles.container}>
-        <Image style={styles.imageStyle} source = {imageSource} />
-        <Text style={styles.titleStyle}>{title}</Text>
-    </View>
+    return (
+        <View style={styles.container}>
+            <Image style={styles.imageStyle} source = {imageSource} />
+            <Text style={styles.titleStyle}>{title}</Text>
+            <View style={styles.icon}>
+                <TouchableOpacity>
+                    <Feather name="heart" size={25} style={ {marginRight: 10} }/>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Feather name="bookmark" size={25} style={ {marginRight: 10} }/>
+                </TouchableOpacity>
+                <TouchableOpacity>
+                    <Feather name="share" size={25} style={ {marginRight: 10} }/>
+                </TouchableOpacity>
+            </View>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
+    icon: {
+        flexDirection: 'row',
+        alignSelf: 'flex-end',
+        flex: 1
+    },
     container: {
+        alignItems: 'flex-start',
         alignSelf: 'center',
         height: 290,
         width: 340,
@@ -29,15 +49,19 @@ const styles = StyleSheet.create({
     
     },
     titleStyle: {
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: 'bold',
-        margin: 5,
-        fontFamily: 'Arial Hebrew'
+        color: '#373737',
+        marginTop: 12,
+        marginLeft:10,
+        fontFamily: 'Arial Hebrew',
+        flex: 2
     },
     imageStyle: {
         height: 170,
         width: 338,
         borderRadius: 10,
+        flex: 4
 
     }
 });
