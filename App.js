@@ -3,14 +3,14 @@ import { createAppContainer } from "react-navigation";
 import HomeScreen from "./src/screens/HomeScreen";
 import NewsScreen from "./src/screens/NewsScreen";
 import EventScreen from "./src/screens/EventScreen";
-import EventDetailDemo from "./src/screens/EventDetailDemo";
+import Events1_TechnicalInterviewWorkshop_Screen from "./src/screens/Events1_TechnicalInterviewWorkshop_Screen";
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
     News: NewsScreen,
     Event: EventScreen,
-    EventDetail: EventDetailDemo
+    Event1: Events1_TechnicalInterviewWorkshop_Screen
   },
   {
     initialRouteName: "Home",

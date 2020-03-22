@@ -52,8 +52,8 @@ const EventBlock = ({
               <Text style={styles.detailTitle}>{title}</Text>
               <Text style={styles.detailTime}>{time}</Text>
             </View>
-            <View style={{ height: 60 }}>
-              <Text>{describe}</Text>
+            <View style={{ height: 70 }}>
+              <Text style={styles.detailDescribe}>{describe}</Text>
             </View>
           </TouchableOpacity>
 

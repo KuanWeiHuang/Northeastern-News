@@ -10,12 +10,12 @@ const EventScreen = () => {
         <View style={styles.line}></View>
         <View>
           <EventBlock
-            day="Feb 29"
+            day="Mar 12"
             year="2020"
             title="Technical Interview Workshp with Michelle Lu"
             time="4:30-5:00 pm"
-            describe="aaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsaf"
-            linkScreen="EventDetail"
+            describe="This workshop will teach students will how to examine and answer a data analyst interview question."
+            linkScreen="Event1"
             imageSource="../../assets/event1image.png"
           />
           <EventBlock
