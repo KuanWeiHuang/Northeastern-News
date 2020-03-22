@@ -15,22 +15,22 @@ const HomeScreen = ({ navigation }) => {
 
             <Text>{term}</Text>
             <ScrollView>
-                <TouchableOpacity onPress={() => navigation.navigate('News')}>
+                <TouchableOpacity onPress={() => navigation.navigate('News1')}>
                     <NewsDetail 
-                        title = "News 1" 
-                        imageSource = {require('../../assets/northeastern_university_logo.png')}
+                        title = "‘This Is Like Armageddon’: Bay Area Chefs Respond to the Region-Wide Lockdown" 
+                        imageSource = {require('../../assets/News1_HeadPic.png')}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('News')}>
+                <TouchableOpacity onPress={() => navigation.navigate('News2')}>
                     <NewsDetail 
-                        title = "News 2" 
-                        imageSource = {require('../../assets/northeastern_university_logo.png')}
+                        title = "COMPANIES CAN HELP EMPLOYEES WORKING REMOTELY DURING THE COVID-19 PANDEMIC" 
+                        imageSource = {require('../../assets/News2_Barbara_Larson.png')}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('News')}>
+                <TouchableOpacity onPress={() => navigation.navigate('News3')}>
                     <NewsDetail 
-                        title = "News 3" 
-                        imageSource = {require('../../assets/northeastern_university_logo.png')}
+                        title = "NORTHEASTERN WILL MOVE TO ONLINE TEACHING FOR STUDENTS AT LONDON, VANCOUVER, AND CHARLOTTE CAMPUSES" 
+                        imageSource = {require('../../assets/News3_london_1400.jpg')}
                     />
                 </TouchableOpacity>
             </ScrollView>
