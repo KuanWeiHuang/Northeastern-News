@@ -54,6 +54,16 @@ const BottomNavigation = createBottomTabNavigator({
     }
   },
 
+  Favorites: {
+    screen: FavoritesScreen,
+    navigationOptions: {
+      tabBarLabel: "Favorites",
+      tabBarIcon: (tabInfo) => {
+        return <Ionicons name="ios-bookmark" size={25} color={tabInfo.tintColor} />;
+      }
+    }
+  },
+
   Signin: {
     screen: SigninScreen,
     navigationOptions: {
