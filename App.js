@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SigninScreen from './src/screens/SigninScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import NewsScreen from './src/screens/NewsScreen';
+import EventsScreen from './src/screens/EventsScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen';
 import TestScreen from './src/screens/TestScreen';
 import { Provider } from './src/context/Favorites';
@@ -29,22 +30,22 @@ const App = createStackNavigator(
 );
 
 const BottomNavigation = createBottomTabNavigator({
-  Home: {
+  News: {
     screen: App,
     navigationOptions: {
-      tabBarLabel: "Home",
+      tabBarLabel: "News",
       tabBarIcon: (tabInfo) => {
-        return <Ionicons name="ios-home" size={25} color={tabInfo.tintColor}/>;
+        return <Ionicons name="ios-paper" size={24} color={tabInfo.tintColor} />;
       }
     }
   },
 
-  Favorite: {
-    screen: FavoritesScreen,
+  Events: {
+    screen: EventsScreen,
     navigationOptions: {
-      tabBarLabel: "Favorites",
+      tabBarLabel: "Events",
       tabBarIcon: (tabInfo) => {
-        return <Ionicons name="ios-bookmark" size={25} color={tabInfo.tintColor} />;
+        return <Ionicons name="ios-calendar" size={27} color={tabInfo.tintColor} />;
       }
     }
   },
@@ -54,7 +55,7 @@ const BottomNavigation = createBottomTabNavigator({
     navigationOptions: {
       tabBarLabel: "Profile",
       tabBarIcon: (tabInfo) => {
-        return <Ionicons name="ios-settings" size={25} color={tabInfo.tintColor}/>;
+        return <Ionicons name="ios-contact" size={27} color={tabInfo.tintColor} />;
       }
   }}
 },{
