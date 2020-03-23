@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity} from 'react-native';
+import { Header } from 'react-native-elements';
 import NewsDetail from '../components/NewsDetail';
 import Banner from '../components/Banner';
 import { withNavigation } from 'react-navigation';
@@ -9,7 +10,15 @@ const HomeScreen = ({ navigation }) => {
 
     return (
         <View style={{marginLeft:15 , marginRight: 15}}>
-
+            <Header
+                // leftComponent={{ icon: 'menu', color: 'black' }}
+                centerComponent={{ text: 'NEU Bay Area', style: { color: 'black', fontSize: 20, fontFamily: 'Arial-BoldMT' } }}
+                rightComponent={{ icon: 'search', color: 'black' }}
+                containerStyle={{
+                    backgroundColor: 'white',
+                    justifyContent: 'space-around',
+                }}
+            />
             {/* <Banner /> */}
             <Text style={styles.time}>Mar 19, 2020</Text>
             <ScrollView >

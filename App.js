@@ -9,7 +9,6 @@ import NewsScreen from './src/screens/NewsScreen';
 import FavoritesScreen from './src/screens/FavoritesScreen';
 import TestScreen from './src/screens/TestScreen';
 import { Provider } from './src/context/Favorites';
-import FavoritesScreen from './src/screens/FavoritesScreen';
 import { Ionicons } from '@expo/vector-icons';
 
 const switchNavigator = createSwitchNavigator({
@@ -17,6 +16,7 @@ const switchNavigator = createSwitchNavigator({
     Home: {
       screen: HomeScreen,
       navigationOptions: {
+        header: 'NEU Bay Area',
         tabBarLabel: "Home",
         tabBarIcon: (tabInfo) => {
           return <Ionicons name="ios-home" size={25} color={tabInfo.tintColor}/>;
