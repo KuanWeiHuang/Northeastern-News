@@ -6,18 +6,23 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SigninScreen from './src/screens/SigninScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import NewsScreen from './src/screens/NewsScreen';
+import News1_CoronavirusSymptoms_Screen from './src/screens/News1_CoronavirusSymptoms_Screen';
+import News2_WorkingRemotely from './src/screens/News2_WorkingRemotely';
+import News3_NEU_MovingToOnlineTeaching from './src/screens/News3_NEU_MovingToOnlineTeaching';
 import FavoritesScreen from './src/screens/FavoritesScreen';
 import TestScreen from './src/screens/TestScreen';
 import { Provider } from './src/context/Favorites';
 import { Ionicons } from '@expo/vector-icons';
-
 
 const App = createStackNavigator(
   {
 
     Home: HomeScreen,
     News: NewsScreen,
-    Favorites: FavoritesScreen
+    Favorites: FavoritesScreen,
+    News1: News1_CoronavirusSymptoms_Screen,
+    News2: News2_WorkingRemotely,
+    News3: News3_NEU_MovingToOnlineTeaching,                                    
   },
   {
 //initial rountine deleted
@@ -60,6 +65,7 @@ const BottomNavigation = createBottomTabNavigator({
 },{
     tabBarOptions:{
       activeTintColor: 'darkred'
+
   }
 });
 
