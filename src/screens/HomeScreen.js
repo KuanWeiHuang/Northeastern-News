@@ -10,23 +10,24 @@ const HomeScreen = ({ navigation }) => {
     return (
         <View style={{marginLeft:15 , marginRight: 15}}>
 
+
             {/* <Banner /> */}
             <Text style={styles.time}>Mar 19, 2020</Text>
             <ScrollView >
-                <TouchableOpacity onPress={() => navigation.navigate('News')}>
+                <TouchableOpacity onPress={() => navigation.navigate('News1')}>
                     <NewsDetail 
                         title = "UNSURE WHAT TO DO ABOUT COVID-19? TAKE THIS 60-MINUTE COURSE" 
                         imageSource = {require('../../assets/news3.jpg')}
                     />
                 </TouchableOpacity>
                 <Text style={styles.time}>Mar 13, 2020</Text>
-                <TouchableOpacity onPress={() => navigation.navigate('News')}>
+                <TouchableOpacity onPress={() => navigation.navigate('News2')}>
                     <NewsDetail 
                         title = "NORTHEASTERN WILL MOVE TO ONLINE TEACHING FOR STUDENTS AT LONDON, VANCOUVER, AND CHARLOTTE CAMPUSES" 
                         imageSource = {require('../../assets/news2.jpg')}
                     />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => navigation.navigate('News')}>
+                <TouchableOpacity onPress={() => navigation.navigate('News3')}>
                     <NewsDetail 
                         title = "COMPANIES CAN HELP EMPLOYEES WORKING REMOTELY DURING THE COVID-19 PANDEMIC" 
                         imageSource = {require('../../assets/news1.jpg')}
