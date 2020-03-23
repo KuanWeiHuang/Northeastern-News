@@ -6,7 +6,8 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SigninScreen from './src/screens/SigninScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import NewsScreen from './src/screens/NewsScreen';
-import FavoritesScreen from './src/screens/FavoritesScreen'
+import FavoritesScreen from './src/screens/FavoritesScreen';
+import TestScreen from './src/screens/TestScreen';
 import { Provider } from './src/context/Favorites';
 import { Ionicons } from '@expo/vector-icons';
 
