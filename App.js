@@ -7,6 +7,7 @@ import SigninScreen from './src/screens/SigninScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import NewsScreen from './src/screens/NewsScreen';
 import EventsScreen from './src/screens/EventsScreen';
+import Events1_TechnicalInterviewWorkshop_Screen from "./src/screens/Events1_TechnicalInterviewWorkshop_Screen";
 import News1_CoronavirusSymptoms_Screen from './src/screens/News1_CoronavirusSymptoms_Screen';
 import News2_WorkingRemotely from './src/screens/News2_WorkingRemotely';
 import News3_NEU_MovingToOnlineTeaching from './src/screens/News3_NEU_MovingToOnlineTeaching';
@@ -15,11 +16,10 @@ import TestScreen from './src/screens/TestScreen';
 import { Provider } from './src/context/Favorites';
 import { Ionicons } from '@expo/vector-icons';
 
-const App = createStackNavigator(
+const App1 = createStackNavigator(
   {
     Home: HomeScreen,
     News: NewsScreen,
-    Favorites: FavoritesScreen,
     News1: News1_CoronavirusSymptoms_Screen,
     News2: News2_WorkingRemotely,
     News3: News3_NEU_MovingToOnlineTeaching,                                    
@@ -33,9 +33,23 @@ const App = createStackNavigator(
   }
 );
 
+const App2 = createStackNavigator(
+  {
+    Event: EventScreen,
+    Event1: Events1_TechnicalInterviewWorkshop_Screen                                  
+  },
+  {
+//initial rountine deleted
+//provider deleted
+    defaultNavigationOptions:{
+      title: 'NEU Bay Area'
+    }
+  }
+);
+
 const BottomNavigation = createBottomTabNavigator({
   News: {
-    screen: App,
+    screen: App1,
     navigationOptions: {
       tabBarLabel: "News",
       tabBarIcon: (tabInfo) => {
@@ -45,7 +59,7 @@ const BottomNavigation = createBottomTabNavigator({
   },
 
   Events: {
-    screen: EventsScreen,
+    screen: App2,
     navigationOptions: {
       tabBarLabel: "Events",
       tabBarIcon: (tabInfo) => {
@@ -75,8 +89,9 @@ const BottomNavigation = createBottomTabNavigator({
 },{
     tabBarOptions:{
       activeTintColor: 'darkred'
-
   }
-});
+);
+
 
 export default createAppContainer(BottomNavigation);
+
