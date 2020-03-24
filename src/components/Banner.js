@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const Banner = () => {
+const Banner = ({ navigation }) => {
     return (
         <View style={styles.banner}>
             <TouchableOpacity style={styles.opacity}>
@@ -13,8 +14,8 @@ const Banner = () => {
             <TouchableOpacity style={styles.opacity}>
                 <Text style={styles.text}>Career</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.opacity}>
-                <Text style={styles.text}>Health</Text>
+            <TouchableOpacity style={styles.opacity} onPress={() => navigation.navigate('Favorites')}>
+                <Text style={styles.text}>Favorites</Text>
             </TouchableOpacity>
         </View>
     );
@@ -41,4 +42,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default Banner;
+export default withNavigation(Banner);
