@@ -3,6 +3,12 @@ import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { withNavigation } from "react-navigation";
 import { Feather, Entypo, MaterialIcons } from "@expo/vector-icons";
+
+const ImagesLib = {
+  event1: require("../../assets/event1image.jpg"),
+  event2: require("../../assets/event3image.jpg")
+};
+
 const reducer = (state, action) => {
   //action={type:'like' || 'mark' || 'imageS'}
   switch (action.type) {
@@ -22,8 +28,8 @@ const EventBlock = ({
   title,
   time,
   describe,
+  imagePath,
   linkScreen,
-  imageSource,
   navigation
 }) => {
   const [state, dispatch] = useReducer(reducer, {
@@ -49,6 +55,7 @@ const EventBlock = ({
             onPress={() => navigation.navigate(`${linkScreen}`)}
           >
             <View>
+              {/* <Text>{imagePath}</Text> */}
               <Text style={styles.detailTitle}>{title}</Text>
               <Text style={styles.detailTime}>{time}</Text>
             </View>
@@ -58,7 +65,7 @@ const EventBlock = ({
           </TouchableOpacity>
 
           {/* image  */}
-          {imageSource !== "" ? (
+          {imagePath !== "" ? (
             <TouchableOpacity
               style={styles.imageView}
               onPress={() => navigation.navigate(`${linkScreen}`)}
@@ -69,7 +76,7 @@ const EventBlock = ({
                   height: "100%",
                   flex: 1
                 }}
-                source={require("../../assets/event1image.png")}
+                source={ImagesLib.event1}
               />
             </TouchableOpacity>
           ) : null}

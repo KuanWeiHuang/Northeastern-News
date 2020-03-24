@@ -16,34 +16,25 @@ const EventScreen = () => {
             time="4:30-5:00 pm"
             describe="This workshop will teach students will how to examine and answer a data analyst interview question."
             linkScreen="Event1"
-            imageSource="../../assets/event1image.png"
+            imagePath="ImagesLib.event1"
           />
           <EventBlock
-            day="Feb 29"
+            day="Mar 18"
             year="2020"
-            title="Case Study Workshop"
+            title="Amazon Interview 101 Workshop(Webinar)"
             time="4:30-5:00 pm"
-            describe="aaaadsfsadfsdfasdfsdfasfsadfsafsafsafafasdfasfasfasfffaf"
-            linkScreen="EventDetail"
-            imageSource=""
+            describe="This webinar will focus on detailing how Amazon's onsite interview loop works and how to “ace it”"
+            linkScreen="Event2"
+            imagePath=""
           />
           <EventBlock
-            day="Feb 28"
+            day="Mar 20"
             year="2020"
-            title="ccc"
+            title="Free Live Leetcode Practice"
             time="4:30-5:00 pm"
-            describe="aaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsafaaaadsfsadfsdfasdfsdfasfsadfsaf"
-            linkScreen="EventDetail"
-            imageSource=""
-          />
-          <EventBlock
-            day="Feb 28"
-            year="2020"
-            title="ccc"
-            time="4:30-5:00 pm"
-            describe="aaaadsfsadfsdfasdfsdfasfsadfsaf"
-            linkScreen="EventDetail"
-            imageSource=""
+            describe="For those of you seeking to improve your technical interview skills for Co-op or full-time roles, this series of workshops will definitely be helpful."
+            linkScreen="Event3"
+            imagePath=""
           />
         </View>
       </ScrollView>
