@@ -48,24 +48,29 @@ const Events1_TechnicalInterviewWorkshop_Screen = ({ navigation }) => {
           <Text style={styles.photoAuthorStyle}>{photoAuthor}</Text>
         </View>
         <Text style={styles.paraContentStyle}>{paragraph1}</Text>
-      </ScrollView>
-      <View style={{ alignItems: "flex-end" }}>
-        <View style={styles.iconsViewStyle}>
-          <TouchableOpacity>
-            <Entypo name="heart-outlined" size={25} style={styles.iconStyle} />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <MaterialIcons
-              name="bookmark-border"
-              size={25}
-              style={styles.iconStyle}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Feather name="share" size={22} style={styles.iconStyle} />
-          </TouchableOpacity>
+
+        <View style={{ alignItems: "flex-end" }}>
+          <View style={styles.iconsViewStyle}>
+            <TouchableOpacity>
+              <Entypo
+                name="heart-outlined"
+                size={25}
+                style={styles.iconStyle}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <MaterialIcons
+                name="bookmark-border"
+                size={25}
+                style={styles.iconStyle}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Feather name="share" size={22} style={styles.iconStyle} />
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
