@@ -6,7 +6,7 @@ import { Feather, Entypo, MaterialIcons } from "@expo/vector-icons";
 
 const ImagesLib = {
   event1: require("../../assets/event1image.jpg"),
-  event2: require("../../assets/event3image.jpg")
+  event3: require("../../assets/event3image.jpg")
 };
 
 const reducer = (state, action) => {
@@ -19,6 +19,16 @@ const reducer = (state, action) => {
       return { ...state, mark: (state.mark = state.mark ? false : true) };
     default:
       return state;
+  }
+};
+const getImgSource = imagePath => {
+  switch (imagePath) {
+    case "event1":
+      return ImagesLib.event1;
+    case "event3":
+      return ImagesLib.event3;
+    default:
+      return null;
   }
 };
 
@@ -74,9 +84,10 @@ const EventBlock = ({
                 style={{
                   width: "100%",
                   height: "100%",
-                  flex: 1
+                  flex: 1,
+                  borderRadius: 5
                 }}
-                source={ImagesLib.event1}
+                source={getImgSource(imagePath)}
               />
             </TouchableOpacity>
           ) : null}
@@ -180,7 +191,14 @@ const styles = StyleSheet.create({
     flex: 2,
     height: 120,
     marginTop: 20,
-    marginRight: 15
+    marginRight: 15,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 1
+    },
+    shadowOpacity: 0.05,
+    shadowRadius: 5
   },
   detailTitle: {
     fontFamily: "ArialHebrew-Bold",
@@ -199,6 +217,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: "#373737",
     paddingBottom: 7
+  },
+  image:{
+
   },
   iconBlock: {
     flexDirection: "row",
