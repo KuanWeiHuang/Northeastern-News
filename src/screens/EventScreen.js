@@ -17,7 +17,6 @@ const EventScreen = () => {
             describe="For those of you seeking to improve your technical interview skills for Co-op or full-time roles, this series of workshops will definitely be helpful."
             linkScreen="Event3"
             imagePath="event3"
-            imagePath=""
           />
           <EventBlock
             day="Mar 18"
@@ -36,7 +35,6 @@ const EventScreen = () => {
             describe="This workshop will teach students will how to examine and answer a data analyst interview question."
             linkScreen="Event1"
             imagePath="event1"
-            imagePath="ImagesLib.event1"
           />
         </View>
       </ScrollView>
