@@ -8,6 +8,8 @@ import HomeScreen from './src/screens/HomeScreen';
 import NewsScreen from './src/screens/NewsScreen';
 import EventScreen from './src/screens/EventScreen';
 import Events1_TechnicalInterviewWorkshop_Screen from "./src/screens/Events1_TechnicalInterviewWorkshop_Screen";
+import Events2_AmazonWorkshop_Screen from "./src/screens/Events2_AmazonWorkshop_Screen";
+import Events3_LeetcodeWorkshop_Screen from "./src/screens/Events3_LeetcodeWorkshop_Screen";
 import News1_CoronavirusSymptoms_Screen from './src/screens/News1_CoronavirusSymptoms_Screen';
 import News2_WorkingRemotely from './src/screens/News2_WorkingRemotely';
 import News3_NEU_MovingToOnlineTeaching from './src/screens/News3_NEU_MovingToOnlineTeaching';
@@ -36,7 +38,9 @@ const App1 = createStackNavigator(
 const App2 = createStackNavigator(
   {
     Event: EventScreen,
-    Event1: Events1_TechnicalInterviewWorkshop_Screen                                  
+    Event1: Events1_TechnicalInterviewWorkshop_Screen,     
+    Event2: Events2_AmazonWorkshop_Screen, 
+    Event3: Events3_LeetcodeWorkshop_Screen,                           
   },
   {
 //initial rountine deleted
