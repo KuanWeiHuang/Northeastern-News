@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SigninScreen from './src/screens/SigninScreen';
 import HomeScreen from './src/screens/HomeScreen';
 import NewsScreen from './src/screens/NewsScreen';
-import EventsScreen from './src/screens/EventsScreen';
+import EventScreen from './src/screens/EventScreen';
 import Events1_TechnicalInterviewWorkshop_Screen from "./src/screens/Events1_TechnicalInterviewWorkshop_Screen";
 import News1_CoronavirusSymptoms_Screen from './src/screens/News1_CoronavirusSymptoms_Screen';
 import News2_WorkingRemotely from './src/screens/News2_WorkingRemotely';
@@ -89,6 +89,7 @@ const BottomNavigation = createBottomTabNavigator({
 },{
     tabBarOptions:{
       activeTintColor: 'darkred'
+    }
   }
 );
 
