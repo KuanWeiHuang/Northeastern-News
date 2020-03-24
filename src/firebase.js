@@ -1,22 +1,19 @@
+
 import firebase from 'firebase';
-import '@firebase/firestore';
 
 const config = {
-    apiKey: "AIzaSyCAbklNQ3uuJaW_aBuSuoAl-mEzD6TaJb4",
-    authDomain: "northeastern-news-2d9e0.firebaseapp.com",
-    databaseURL: "https://northeastern-news-2d9e0.firebaseio.com",
-    projectId: "northeastern-news-2d9e0",
-    storageBucket: "northeastern-news-2d9e0.appspot.com",
-    messagingSenderId: "478660589593",
-    // appId: "1:478660589593:web:8c08fdcd5e54c8e81dd288",
-    // measurementId: "G-CKDK76LYQQ"
+  apiKey: "AIzaSyBvadaCBtDtgN4kK7RtugEmB0JToERhvfs",
+  authDomain: "northeastern-news.firebaseapp.com",
+  databaseURL: "https://northeastern-news.firebaseio.com",
+  projectId: "northeastern-news",
+  storageBucket: "northeastern-news.appspot.com",
+  messagingSenderId: "133211739205",
+  // appId: "1:133211739205:web:6178de13c6af44d5f1bf2c",
+  // measurementId: "G-4DWQWEN1DY"
 };
-
 
 const Firebase = firebase.initializeApp(config);
 
-
 const Auth = firebase.auth();
-
 
 export {Firebase, Auth};

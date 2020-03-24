@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View, ScrollView, StyleSheet } from 'react-native';
 
-const EventsDetailScreen = () => {
+const EventsDetailScreen = ({navigation}) => {
     return (
         <View>
-            <Text>EventsDetailScreen</Text>
+            <Text>EventsDetail Screen</Text>
         </View>
     );
 };
